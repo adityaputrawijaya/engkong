@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Layout Example</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #00ff26;
+    color: #fff;
+  }
+  .header {
+    background-color: #00D1FF;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 25px;
+  }
+  .nav {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    padding-right: 50px;
+    background-color: #00D1FF;
+  }
+  .nav li {
+    margin-left: 20px;
+  }
+.nav a {
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+  }
+  .nav a:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: white;
+    transform: scaleX(0); /* Efek awal, tidak terlihat */
+    transition: transform 0.2s ease-in-out; /* Animasi transisi */
+  }
+
+  .nav a:hover:after, /* Efek saat hover */
+  .nav a:active:after { /* Efek saat tombol ditekan */
+    transform: scaleX(1); /* Garis bawah memanjang */
+  }
+  .hero {
+    background-color: #00D1FF;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+  }
+  .content {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .sidebar {
+    width: 500px;
+    background-color: #eee;
+    padding: 10px;
+    margin: 10px;
+    margin-left: 20px;
+    background-color: #00D1FF;
+  }
+  .sidebar button{
+    color: white;
+    background-color: black;
+  }
+  .main-content {
+    flex: 1;
+    padding: 0 20px;
+  }
+  .main-content img {
+    width: 100%;
+    height: auto;
+    
+  }
+  .footer {
+    background-color: #00D1FF;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+  }
+  .chat-button {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+  /* CSS untuk membuat slideshow */
+  .slideshow-container {
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden;
+    text-align: center;
+  }
+  .mySlides {
+    display: none;
+    width: 100%;
+    transition: opacity 1s ease; /* Efek transisi untuk slideshow */
+
+  }
+  .main-content .mySlides img {
+    width: 225px; /* Ubah ukuran gambar menjadi 400x400 */
+    height: 225px;
+    border-radius: 50%;
+    background-color: #FFFFFF;
+
+  }
+  /* Style dots indicator */
+  .dot-container {
+    text-align: center;
+    padding: 10px;
+    margin-top: 20px;
+  }
+  .dot {
+    cursor: pointer;
+    height: 15px;
+    width: 15px;
+    margin: 0 2px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+  }
+  .active {
+    background-color: #717171;
+  }
+</style>
+<script src="https://kit.fontawesome.com/e7e978e685.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">LOGO</div>
+  <nav>
+    <ul class="nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="product.html">Product</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <a href="#" class="chat-button">Chat Me</a>
+</header>
+
+<section class="hero">
+  <h1>Web Design & Development</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+</section>
+
+<main class="content">
+  <aside class="sidebar">
+    <h1 style="font-size: 64px;">Deskripsi Produk</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat consectetur, facere ab exercitationem nemo corrupti tempora necessitatibus fugiat impedit libero. Inventore quibusdam, asperiores labore nesciunt eum accusantium maxime eius voluptate.</p>
+    <button>Pelajari Selengkapnya <i class="fa-solid fa-arrow-up-right-from-square"></i></button> <!-- Tombol "Pelajari Selengkapnya" -->
+  </aside>
+  <article class="main-content">
+    <div class="slideshow-container">
+      <!-- Gambar-gambar dalam slideshow -->
+      <div class="mySlides fade">
+        <img src="image/sandal1rm.png">
+      </div>
+      <div class="mySlides fade">
+        <img src="image/sandal2rm.png">
+      </div>
+      <div class="mySlides fade">
+        <img src="image/sandal5rm.png">
+      </div>
+      <!-- Style dots untuk indikator -->
+      <div class="dot-container" style="text-align:center">
+        <span class="dot" onclick="currentSlide(1)"></span>
+        <span class="dot" onclick="currentSlide(2)"></span>
+        <span class="dot" onclick="currentSlide(3)"></span>
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer class="footer">
+  <p>© 2023 Your Company Name</p>
+</footer>
+
+<script>
+  var slideIndex = 1;
+  showSlides(slideIndex);
+  var slideInterval = setInterval(function() {
+    plusSlides(1); // Panggil plusSlides dengan nilai 1 setiap 2 detik
+  }, 2000); // 2000ms = 2 detik
+  
+  // Fungsi untuk menampilkan slide berdasarkan indeks
+  function plusSlides(n) {
+    clearInterval(slideInterval); // Hentikan interval saat tombol atau dot diklik
+    showSlides(slideIndex += n);
+    slideInterval = setInterval(function() {
+      plusSlides(1);
+    }, 2000); // Mulai lagi interval setelah 2 detik
+  }
+  
+  // Fungsi untuk menampilkan slide saat dot indikator diklik
+  function currentSlide(n) {
+    clearInterval(slideInterval); // Hentikan interval saat dot diklik
+    showSlides(slideIndex = n);
+    slideInterval = setInterval(function() {
+      plusSlides(1);
+    }, 2000); // Mulai lagi interval setelah 2 detik
+  }
+  
+  function showSlides(n) {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    if (n > slides.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = slides.length}
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " active";
+  }
+  document.addEventListener('DOMContentLoaded', function() {
+  // Tangkap semua tautan navigasi
+  const navLinks = document.querySelectorAll('.nav a');
+
+  // Tambahkan event listener untuk setiap tautan
+  navLinks.forEach(link => {
+    link.addEventListener('click', function(event) {
+      event.preventDefault(); // Hentikan default action (pindah halaman)
+      const href = this.getAttribute('href'); // Ambil atribut href dari tautan
+
+      // Tambahkan efek transisi side in untuk semua halaman
+      document.body.style.transition = 'transform 0.3s ease';
+      document.body.style.transform = 'translateX(-100%)'; // Geser halaman keluar ke kiri
+
+      // Atur timeout untuk pindah halaman setelah efek transisi
+      setTimeout(function() {
+        window.location.href = href;
+      }, 200); // Waktu efek transisi dalam milidetik (0.3 detik)
+    });
+  });
+});
+</script>
+</body>
+</html>

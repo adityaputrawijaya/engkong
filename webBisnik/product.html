@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Web Layout Example</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #00D1FF;
+    color: #fff;
+  }
+  .header {
+    background-color: #00D1FF;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .logo {
+    font-size: 24px;
+    font-weight: bold;
+    padding-left: 25px;
+  }
+  .nav {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    padding-right: 20px;
+    background-color: #00D1FF;
+    margin-right: 50px;
+  }
+  .nav li {
+    margin-left: 20px;
+  }
+  .nav a {
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+  }
+  .nav a:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -3px;
+    left: 0;
+    background-color: white;
+    transform: scaleX(0); /* Efek awal, tidak terlihat */
+    transition: transform 0.2s ease-in-out; /* Animasi transisi */
+  }
+
+  .nav a:hover:after, /* Efek saat hover */
+  .nav a:active:after { /* Efek saat tombol ditekan */
+    transform: scaleX(1); /* Garis bawah memanjang */
+  }
+  .hero {
+    background-color: #00D1FF;
+    color: #fff;
+    padding: 50px 0;
+    text-align: center;
+  }
+  .content {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+  .main-content {
+    flex: 1;
+    padding: 0 20px;
+    display: flex;
+    margin-left: 80px;
+  }
+  .footer {
+    background-color: #00D1FF;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 20px;
+  }
+  .chat-button {
+    background-color: #ff6600;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+  }
+
+  /* Style untuk card item */
+  .card {
+    width: 190px;
+    margin: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .card:hover {
+    transform: translateY(-5px);
+  }
+
+  .card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px 10px 0 0;
+    background-color: white;
+  }
+
+  .card-content {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 0 0 10px 10px;
+  }
+
+  .card-content h3 {
+    margin: 0;
+    font-size: 20px;
+    color: #333;
+  }
+
+  .card-content p {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #666;
+  }
+  .buy-button {
+    display: block;
+    width: 80%;
+    padding: 10px;
+    margin-top: 10px;
+    background-color: #27B8D8;
+    color: #fff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+  }
+
+  .buy-button:hover {
+    background-color: black;
+  }
+</style>
+</head>
+<body>
+
+<header class="header">
+  <div class="logo">LOGO</div>
+  <nav>
+    <ul class="nav">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="product.html">Product</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <a href="#" class="chat-button">Chat Me</a>
+</header>
+
+<section class="hero">
+  <h1>Product</h1>
+  <hr style="width: 80%; height: 2px; background-color: white;">
+</section>
+
+<main class="content">
+  <article class="main-content">
+    <div class="card">
+      <img src="image/sandal1rm.png" alt="Product Image">
+      <div class="card-content">
+        <h3>Product Title 1</h3>
+        <p>Description of the product goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p class="harga"><s></s></p>
+        <p class="diskon"></p>
+        <a href="" class="buy-button">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="card">
+      <img src="image/sandal2rm.png" alt="Product Image">
+      <div class="card-content">
+        <h3>Product Title 2</h3>
+        <p>Description of the product goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p class="harga"><s></s></p>
+        <p class="diskon"></p>
+        <a href="" class="buy-button">Buy Now</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/sandal3rm.png" alt="Product Image">
+      <div class="card-content">
+        <h3>Product Title 3</h3>
+        <p>Description of the product goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p class="harga"><s></s></p>
+        <p class="diskon"></p>
+        <a href="" class="buy-button">Buy Now</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/sandal4rm.png" alt="Product Image">
+      <div class="card-content">
+        <h3>Product Title 4</h3>
+        <p>Description of the product goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p class="harga"><s></s></p>
+        <p class="diskon"></p>
+        <a href="" class="buy-button">Buy Now</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/sandal5rm.png" alt="Product Image">
+      <div class="card-content">
+        <h3>Product Title 5</h3>
+        <p>Description of the product goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p class="harga"><s></s></p>
+        <p class="diskon"></p>
+        <a href="" class="buy-button">Buy Now</a>
+      </div>
+    </div>
+  </article>
+  <article class="main-content">
+    <div class="card">
+      <img src="image/sandal6rm.png" alt="Product Image">
+      <div class="card-content">
+        <h3>Product Title 6</h3>
+        <p>Description of the product goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p class="harga"><s></s></p>
+        <p class="diskon"></p>
+        <a href="" class="buy-button">Buy Now</a>
+      </div>
+    </div>
+    
+    <div class="card">
+      <img src="image/sandal7rm.png" alt="Product Image">
+      <div class="card-content">
+        <h3>Product Title 7</h3>
+        <p>Description of the product goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p class="harga"><s></s></p>
+        <p class="diskon"></p>
+        <a href="" class="buy-button">Buy Now</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/sandal8rm.png" alt="Product Image">
+      <div class="card-content">
+        <h3>Product Title 8</h3>
+        <p>Description of the product goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p class="harga"><s></s></p>
+        <p class="diskon"></p>
+        <a href="" class="buy-button">Buy Now</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/sandal9rm.png" alt="Product Image">
+      <div class="card-content">
+        <h3>Product Title 9</h3>
+        <p>Description of the product goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p class="harga"><s></s></p>
+        <p class="diskon"></p>
+        <a href="" class="buy-button">Buy Now</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="image/sandal10rm.png" alt="Product Image">
+      <div class="card-content">
+        <h3>Product Title 10</h3>
+        <p>Description of the product goes here. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        <p class="harga"><s></s></p>
+        <p class="diskon"></p>
+        <a href="" class="buy-button">Buy Now</a>
+      </div>
+    </div>
+  </article>
+</main>
+
+<footer class="footer">
+  <p>© 2023 Your Company Name</p>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Tangkap semua tautan navigasi
+    const navLinks = document.querySelectorAll('.nav a');
+
+    // Tambahkan event listener untuk setiap tautan
+    navLinks.forEach(link => {
+      link.addEventListener('click', function(event) {
+        event.preventDefault(); // Hentikan default action (pindah halaman)
+        const href = this.getAttribute('href'); // Ambil atribut href dari tautan
+
+        // Tambahkan efek transisi side in untuk semua halaman
+        document.body.style.transition = 'transform 0.3s ease';
+        document.body.style.transform = 'translateX(-100%)'; // Geser halaman keluar ke kiri
+
+        // Atur timeout untuk pindah halaman setelah efek transisi
+        setTimeout(function() {
+          window.location.href = href;
+        }, 200); // Waktu efek transisi dalam milidetik (0.3 detik)
+      });
+    });
+  });
+  document.addEventListener('DOMContentLoaded', function() {
+  // Array data harga dan diskon
+  const products = [
+    { harga: 50000, diskon: 35000 },
+    { harga: 50000, diskon: 35000 },
+    { harga: 50000, diskon: 35000 },
+    { harga: 50000, diskon: 35000 },
+    { harga: 50000, diskon: 35000 },
+    { harga: 70000, diskon: 40000 },
+    { harga: 70000, diskon: 40000 },
+    { harga: 70000, diskon: 40000 },
+    { harga: 70000, diskon: 40000 },
+    { harga: 70000, diskon: 40000 }
+  ];
+
+  // Tangkap semua elemen card
+  const cards = document.querySelectorAll('.card');
+
+  // Loop melalui setiap card dan tambahkan harga dan diskon
+  cards.forEach((card, index) => {
+    const hargaElement = card.querySelector('.harga');
+    const diskonElement = card.querySelector('.diskon');
+    const product = products[index];
+
+    if (hargaElement && diskonElement && product) {
+      hargaElement.innerHTML = `Harga <s>Rp: ${product.harga}</s>`;
+      diskonElement.textContent = `Harga Rp: ${product.diskon}`;
+    }
+  });
+});
+document.addEventListener('DOMContentLoaded', function() {
+  // Tangkap semua tombol "Buy Now"
+  const buyButtons = document.querySelectorAll('.buy-button');
+
+  // Tautan WhatsApp
+  const waLink = 'https://wa.me/+6281293189220';
+
+  // Loop melalui setiap tombol "Buy Now" dan atur tautan WhatsApp
+  buyButtons.forEach(button => {
+    button.href = waLink;
+  });
+});
+
+</script>
+
+</body>
+</html>

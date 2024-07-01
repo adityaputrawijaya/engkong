@@ -1,0 +1,8 @@
+*{
+    padding: 0;
+    margin: 0;
+    background-image: url('../image/sample.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+}
